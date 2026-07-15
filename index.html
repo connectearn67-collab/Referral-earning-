@@ -1,1 +1,333 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONNECT & EARN AFRICA 🌍</title>
+
+<!-- THIS MAKES YOUR LINK LOOK LIKE SITUKA ON WHATSAPP -->
+<meta property="og:title" content="CONNECT & EARN AFRICA 🌍">
+<meta property="og:description" content="Earn 3000 UGX Per Referral. Pay 5000UGX Entry Fee and start earning today.">
+<meta property="og:image" content="https://i.imgur.com/8QZQZQZ.jpg">
+<meta property="og:url" content="https://connectearn67-collab.github.io/Referral-earning-/">
+<meta property="og:site_name" content="CONNECT & EARN AFRICA">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Arial}
+body{
+  background: url('https://i.imgur.com/8QZQZQZ.jpg') no-repeat center fixed;
+  background-size: cover;
+  color:#fff;
+  max-width:480px;
+  margin:0 auto;
+  padding-bottom:80px;
+  position:relative;
+}
+body::before{
+  content:'';
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.5);
+  z-index:-1;
+}
+.header{padding:20px;text-align:center;background:linear-gradient(135deg,#ff8c00,#ff0044);font-weight:900;font-size:22px;position:relative;box-shadow:0 4px 15px rgba(0,0,0,0.5)}
+.btn{width:90%;margin:12px auto;display:block;padding:16px;background:linear-gradient(135deg,#ff8c00,#ff0044);border:0;border-radius:14px;color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:0.2s;text-decoration:none;text-align:center}
+.btn:hover{transform:scale(1.02)}
+.btn-small{padding:8px 12px;font-size:12px;width:auto;display:inline-block;margin:3px;border-radius:8px}
+.btn-success{background:linear-gradient(135deg,#00cc66,#00ff88)}
+.btn-danger{background:linear-gradient(135deg,#ff0044,#ff6b6b)}
+.btn-whatsapp{background:linear-gradient(135deg,#25D366,#128C7E)}
+input,select,textarea{width:90%;margin:10px auto;display:block;padding:15px;background:rgba(30,30,46,0.85);border:2px solid #ff8c00;border-radius:12px;color:#fff;font-size:16px}
+.card{background:rgba(30,30,46,0.85);margin:14px;border-radius:20px;padding:20px;box-shadow:0 4px 15px rgba(0,0,0,0.4);backdrop-filter: blur(4px)}
+.screen{display:none}.screen.active{display:block}
+.note-danger{font-size:12px;color:#ffcc00;text-align:center;padding:10px;background:rgba(255,0,68,0.2);border-radius:10px;margin:10px;font-weight:700}
+.phone-group{display:flex;width:90%;margin:10px auto;gap:8px}
+.phone-group select{width:40%}.phone-group input{width:60%}
+.payment-btn{flex:1;padding:18px;border-radius:16px;text-align:center;font-weight:800;cursor:pointer;border:3px solid transparent;font-size:16px}
+.payment-btn.selected{border-color:#00ff88}
+.payment-icons{display:flex;gap:15px;width:90%;margin:15px auto}
+.mtn-btn{background:#ffcc00;color:#000}.airtel-btn{background:#ff0044;color:#fff}
+.payment-number-box{background:rgba(37,37,58,0.9);border:2px dashed #00ff88;padding:20px;border-radius:16px;margin:15px 0;text-align:center}
+.payment-number{font-size:28px;font-weight:900;color:#00ff88}
+.back{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:26px;cursor:pointer}
+.admin-zone{position:absolute;top:0;right:0;width:60px;height:60px;z-index:10}
+.user-row{display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(37,37,58,0.9);border-radius:12px;margin:10px 0}
+.referral-badge{background:#00cc66;padding:4px 8px;border-radius:8px;font-size:10px;font-weight:700}
+.owed-box{background:rgba(255,0,68,0.2);border:2px solid #ff0044;padding:15px;border-radius:15px;text-align:center;margin-bottom:15px}
+.history-item{display:flex;flex-direction:column;padding:12px 0;border-bottom:1px solid #555;gap:5px}
+.label{font-size:12px;color:#ff8c00;margin-left:5%;display:block;margin-bottom:5px;font-weight:600}
+.inviter-info{background:rgba(26,26,46,0.9);padding:8px;border-radius:8px;margin-top:5px;font-size:11px;border-left:2px solid #00ff88}
+</style>
+</head>
+<body>
+
+<!-- LOGIN / SIGNUP -->
+<div id="login" class="screen active">
+  <div class="header">CONNECT & EARN AFRICA 🌍 <div class="admin-zone" onclick="adminTap()"></div></div>
+  <div style="text-align:center;padding:20px"><div style="font-size:50px">💰</div><div style="font-size:20px;font-weight:900;color:#ff8c00">Earn 3000 UGX Per Referral</div></div>
+  <div class="note-danger">⚠️ Use exact names and phone number where we shall pay you from</div>
+
+  <div id="loginform" class="card">
+    <h3 style="color:#ff8c00;text-align:center">USER LOGIN</h3>
+    <input id="loginName" placeholder="Full Name - As registered">
+    <div class="phone-group">
+      <select id="loginCountry">
+        <option value="+256" selected>🇺🇬 Uganda +256</option>
+      </select>
+      <input id="loginphone" placeholder="9 Digits Only" inputmode="numeric" maxlength="9">
+    </div>
+    <button class="btn" onclick="loginExisting()">🔑 Login</button>
+    <button class="btn" style="background:#00cc66" onclick="showCreate()">✨ Create Account - Pay 5000</button>
+  </div>
+
+  <div id="signupform" class="card" style="display:none">
+    <h3 style="color:#00ff88;text-align:center">CREATE ACCOUNT</h3>
+    <input id="fullname" placeholder="Full Name - As on Mobile Money">
+    <div class="phone-group">
+      <select id="signupCountry">
+        <option value="+256" selected>🇺🇬 Uganda +256</option>
+      </select>
+      <input id="phone" placeholder="9 Digits Only" inputmode="numeric" maxlength="9">
+    </div>
+    <button class="btn" onclick="createAccount()">Create Account & Pay 5000UGX Entry Fee Online</button>
+    <button class="btn" style="background:#666" onclick="showLogin()">← Back to Login</button>
+  </div>
+</div>
+
+<!-- PAYMENT PAGE -->
+<div id="payment" class="screen">
+  <div class="header"><span class="back" onclick="showScreen('login')">←</span>Pay 5000 UGX</div>
+  <div class="card">
+    <div class="note-danger">After payment, copy SMS from MTN/Airtel and paste below as proof</div>
+    <h3>Step 1: Choose Payment Method</h3>
+    <div class="payment-icons">
+      <div class="payment-btn mtn-btn" id="mtnbtn" onclick="showPayment('MTN')">📱 MTN</div>
+      <div class="payment-btn airtel-btn" id="airtelbtn" onclick="showPayment('Airtel')">📱 AIRTEL</div>
+    </div>
+    <div id="paymentnumberbox" style="display:none"></div>
+    <div id="step2" style="display:none">
+      <h3>Step 2: Submit Payment Proof</h3>
+      <span class="label">Paste Your Payment SMS Here</span>
+      <textarea id="paymentProof" rows="4" placeholder="Paste the full SMS from MTN/Airtel here..."></textarea>
+      <button class="btn btn-success" onclick="submitPaymentProof()">✅ Submit Payment Proof</button>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="screen">
+  <div class="header">Dashboard</div>
+  <div class="card">
+    <div>Welcome, <span id="dashName" style="font-weight:800;color:#00ff88"></span></div>
+    <div style="font-size:12px;color:#aaa">Payout to: <span id="dashPhone"></span></div>
+  </div>
+  <div class="card">
+    <h3>🔗 Your UNIQUE Referral Link</h3>
+    <input id="reflink" readonly>
+    <button class="btn" style="background:#00cc66" onclick="navigator.clipboard.writeText(document.getElementById('reflink').value)">📋 Copy Link</button>
+    <small style="color:#aaa">Share this link. When people click it, it will show "CONNECT & EARN AFRICA" preview</small>
+  </div>
+  <div class="card"><h3>My Referral History: <span id="myReferrals">0</span></h3><div id="referralsList">Loading...</div></div>
+  <button class="btn" style="background:#ff0044" onclick="logout()">🚪 Logout</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin" class="screen">
+  <div class="header"><span class="back" onclick="showScreen('login')">←</span>ADMIN LOGIN</div>
+  <div class="card">
+    <input id="adminname" type="text" placeholder="Admin Name">
+    <input id="adminpass" type="password" placeholder="Admin Password">
+    <button class="btn" onclick="adminLogin()">Login Admin</button>
+  </div>
+  <div id="admincontent" style="display:none">
+    <div class="owed-box">
+      <div style="font-size:12px;color:#aaa">Total Owed to Referrers</div>
+      <div style="font-size:28px;font-weight:900;color:#ff0044">UGX <span id="totalOwed">0</span></div>
+    </div>
+    <div id="userslist">Loading...</div>
+    <button class="btn btn-danger" onclick="logoutAdmin()">🚪 Logout Admin</button>
+  </div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+  import { getDatabase, ref, set, get, update, onValue, push } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBItj0VrE8gSX2PT6_DPl15cpJpzBGLC64",
+    authDomain: "connect-and-earn.firebaseapp.com",
+    databaseURL: "https://connect-and-earn-default-rtdb.firebaseio.com",
+    projectId: "connect-and-earn",
+    storageBucket: "connect-and-earn.firebasestorage.app",
+    messagingSenderId: "135263410032",
+    appId: "1:135263410032:web:5d5891c7c4f133314521b5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const MTN_NUMBER = "+256788417769";
+  const AIRTEL_NUMBER = "+256743830346";
+  const ADMIN_NAME = "lubinga Alosious";
+  const ADMIN_LOGIN_NAME = "Connect";
+  const ADMIN_PASS = "nanungi";
+  const REFERRAL_AMOUNT = 3000;
+
+  let currentUser = null;let currentUserId = null;let selectedPaymentMethod = ''; let tempUserData = null; let allUsers = {};
+  let tapCount = 0;
+
+  function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+  window.showCreate = ()=>{document.getElementById('loginform').style.display='none';document.getElementById('signupform').style.display='block';}
+  window.showLogin = ()=>{document.getElementById('signupform').style.display='none';document.getElementById('loginform').style.display='block';}
+
+  async function saveLocal(key, data){ await set(ref(db, 'connect_users/' + key), data); }
+  async function loadLocal(key){ const snap = await get(ref(db, 'connect_users/' + key)); return snap.exists()? snap.val() : null; }
+  async function loadAllUsersDB(){ const snap = await get(ref(db, 'connect_users')); allUsers = snap.val() || {}; }
+
+  function findUserByReferralCode(code){
+    for(const key in allUsers){
+      if(allUsers[key].referralCode === code) return {id: key,...allUsers[key]};
+    }
+    return null;
+  }
+
+  window.adminTap = function(){ tapCount++; if(tapCount >= 5){ tapCount = 0; showScreen('admin'); } setTimeout(()=>{tapCount=0}, 2000); }
+
+  window.adminLogin = async function(){
+    const name = document.getElementById('adminname').value.trim();
+    const pass = document.getElementById('adminpass').value;
+    if(name!== ADMIN_LOGIN_NAME || pass!== ADMIN_PASS) return alert('Wrong Admin Name or Password');
+    document.getElementById('admincontent').style.display='block';
+    loadAllUsersDB().then(loadAllUsers);
+  }
+
+  window.logoutAdmin = function(){
+    document.getElementById('admincontent').style.display='none';
+    document.getElementById('adminname').value = '';
+    document.getElementById('adminpass').value = '';
+    showScreen('login');
+  }
+
+  function loadAllUsers(){
+    document.getElementById('totalUsers').textContent = Object.keys(allUsers).length;
+    let html = ''; let totalOwed = 0;
+    for(const key in allUsers){
+      const u = allUsers[key];
+      const invitor = u.referredBy? findUserByReferralCode(u.referredBy) : null;
+      if(!u.paid && invitor) totalOwed += REFERRAL_AMOUNT;
+      html += `<div class="user-row"><div><b>${u.name}</b><br><small>${u.phone}</small></div><div><b>UGX ${invitor?REFERRAL_AMOUNT:0}</b></div></div>`;
+    }
+    document.getElementById('userslist').innerHTML = html || 'No users';
+    document.getElementById('totalOwed').textContent = totalOwed.toLocaleString();
+  }
+
+  function getBaseUrl(){ return "https://connectearn67-collab.github.io/Referral-earning-/"; }
+
+  window.loginExisting = async function(){
+    const name = document.getElementById('loginName').value.trim().toUpperCase();
+    const digits = document.getElementById('loginphone').value.trim();
+    const country = document.getElementById('loginCountry').value;
+    if(!name || digits.length<7) return alert('Enter Full Name and Phone number');
+
+    const phone = country + digits;
+    currentUserId = 'connect_user_' + btoa(phone).replace(/=/g,'');
+    currentUser = await loadLocal(currentUserId);
+
+    if(!currentUser) return alert('Account not found. Please Create Account First');
+    if(currentUser.name!== name) return alert('Name does not match this phone number');
+
+    localStorage.setItem('currentUserId', currentUserId);
+    await loadAllUsersDB();
+    updateUserInfo();
+    loadUserHistory();
+    showScreen('dashboard');
+  }
+
+  window.createAccount = async function(){
+    const name = document.getElementById('fullname').value.trim().toUpperCase();
+    const digits = document.getElementById('phone').value.trim();
+    const country = document.getElementById('signupCountry').value;
+    if(!name || digits.length<7) return alert('Enter valid name and phone number');
+    const phone = country + digits;
+    const referralCode = name.split(' ')[0].substring(0,4) + digits.slice(-4) + Math.floor(Math.random()*100);
+    currentUserId = 'connect_user_' + btoa(phone).replace(/=/g,'');
+
+    const existing = await loadLocal(currentUserId);
+    if(existing) return alert(`Account with this phone already exists. Please LOGIN`);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrerCode = urlParams.get('ref');
+
+    tempUserData = {
+      name,phone,balance:0,referralCode:referralCode,
+      referralLink: getBaseUrl() + `?ref=${referralCode}&name=${encodeURIComponent(name)}`,
+      referredBy: referrerCode, paid: false, joinDate: new Date().toISOString()
+    };
+    showScreen('payment');
+  }
+
+  window.showPayment = function(method){
+    selectedPaymentMethod = method;
+    document.getElementById('mtnbtn').classList.remove('selected');
+    document.getElementById('airtelbtn').classList.remove('selected');
+    if(method === 'MTN') document.getElementById('mtnbtn').classList.add('selected');
+    if(method === 'Airtel') document.getElementById('airtelbtn').classList.add('selected');
+    const number = method==='MTN'? MTN_NUMBER : AIRTEL_NUMBER;
+    document.getElementById('paymentnumberbox').style.display='block';
+    document.getElementById('paymentnumberbox').innerHTML = `<div class="payment-number-box"><div>Send UGX 5,000 to:</div><div class="payment-number">${number}</div><div>Account Name: ${ADMIN_NAME}</div></div>`;
+    document.getElementById('step2').style.display='block';
+  }
+
+  window.submitPaymentProof = async function(){
+    const sms = document.getElementById('paymentProof').value.trim();
+    if(!sms) return alert('Please paste your payment SMS');
+    await saveLocal(currentUserId, {...tempUserData, method:selectedPaymentMethod});
+    await push(ref(db, 'connect_paymentProofs'), {userId: currentUserId, name: tempUserData.name, phone: tempUserData.phone, method: selectedPaymentMethod, sms: sms, timestamp: Date.now()});
+    alert(`✅ Payment proof submitted! Admin will verify and activate your account.`);
+    showScreen('login');
+  }
+
+  window.logout = function(){localStorage.removeItem('currentUserId'); currentUser=null; currentUserId=null; showScreen('login');}
+
+  function updateUserInfo(){
+    if(currentUser){
+      document.getElementById('dashName').textContent = currentUser.name;
+      document.getElementById('dashPhone').textContent = currentUser.phone;
+      document.getElementById('reflink').value = currentUser.referralLink;
+    }
+  }
+
+  function loadUserHistory(){
+    onValue(ref(db, 'connect_users'), (snapshot) => {
+      allUsers = snapshot.val() || {};
+      let count = 0; let list = '';
+      for(const key in allUsers){
+        if(allUsers[key].referredBy === currentUser.referralCode){
+          count++;
+          const status = allUsers[key].paid? `PAID ${REFERRAL_AMOUNT} UGX` : `PENDING ${REFERRAL_AMOUNT} UGX`;
+          list += `<div class="history-item"><b>${allUsers[key].name}</b> - ${status}</div>`;
+        }
+      }
+      document.getElementById('myReferrals').textContent = count;
+      document.getElementById('referralsList').innerHTML = list || 'None yet';
+    });
+  }
+
+  const savedUser = localStorage.getItem('currentUserId');
+  if(savedUser){
+    currentUserId = savedUser;
+    loadLocal(currentUserId).then(user => {
+      if(user){
+        currentUser = user;
+        loadAllUsersDB().then(()=>{updateUserInfo(); loadUserHistory(); showScreen('dashboard');})
+      }
+    });
+  }
+</script>
+</body>
+</html>
